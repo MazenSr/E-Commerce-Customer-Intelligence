@@ -118,14 +118,6 @@ Multiple algorithms (K-Means, Agglomerative Clustering, GMM, DBSCAN) and hyperpa
 
 Anomaly detection is executed using **Isolation Forest** (supported by comparative runs with Local Outlier Factor and One-Class SVM).
 
-### Architectural Independence
-To maintain schema purity, the K-Means cluster assignment is **not** fed into the Isolation Forest. Segmentation and anomaly detection run as parallel, independent pipelines. Every customer profile receives decoupled analytical metadata:
-
-```text
-Customer ID ──┬──► Cluster Assignment               (K-Means Pipeline)
-            └──► [Is_Anomaly, Anomaly_Score]     (Isolation Forest Pipeline)
-
----
 
 ## 🖥️ Streamlit Dashboard Architecture
 
@@ -135,40 +127,6 @@ The frontend application is built using Streamlit, styled via an external `style
 2. **🧩 Segments:** Detailed segment profile comparisons, population progress indicators, and median feature variance tables.
 3. **⚡ Anomalies:** Isolation Forest triage queue, anomaly density histograms, and high-confidence flag tables.
 4. **🔍 Customers:** Individual account inspection portal providing individual persona tags, deviation scores, and raw feature metrics.
-
----
-
-## 🏗️ Project Architecture
-
-```text
-E-Commerce-Customer-Intelligence/
-│
-├── app.py                      # Main Streamlit application and router
-├── style.css                   # Custom dark-theme UI styling
-├── components/
-│   ├── __init__.py
-│   └── ui_blocks.py            # Modular rendering functions for UI tabs
-├── src/
-│   ├── __init__.py
-│   ├── cleaning.py             # Transaction cleaning routines
-│   ├── feature_engineering.py  # Customer aggregation logic
-│   ├── preprocessing.py        # Scaler & transformer builders
-│   └── inference.py            # Batch inference pipeline runner
-├── notebooks/
-│   ├── 01_data_understanding_eda.ipynb
-│   ├── 02_feature_analysis.ipynb
-│   ├── 03_preprocessing_pca.ipynb
-│   ├── 04_clustering_experiments.ipynb
-│   ├── 05_cluster_profiling.ipynb
-│   └── 06_anomaly_detection.ipynb
-├── models/
-│   ├── preprocessor_robust.joblib
-│   ├── clustering_model.joblib
-│   └── anomaly_inference_pipeline.joblib
-├── assets/                     # Screenshots and visual media
-├── requirements.txt            # Dependency tracking
-├── LICENSE                     # MIT License
-└── README.md                   # Project documentation
 
 ---
 
