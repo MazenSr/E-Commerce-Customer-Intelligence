@@ -17,7 +17,7 @@
 
 ### Executive Overview
 
-![Executive Overview & Customer Segmentation](assets/overview_header_pca.png)
+![Executive Overview & Customer Segmentation](assets/overview_header.png)
 
 ### Segment Distribution & Anomaly Summary
 
@@ -119,8 +119,11 @@ Multiple algorithms (K-Means, Agglomerative Clustering, GMM, DBSCAN) and hyperpa
 Anomaly detection is executed using **Isolation Forest** (supported by comparative runs with Local Outlier Factor and One-Class SVM).
 
 ### Architectural Independence
-To maintain schema purity, the K-Means cluster assignment is **not** fed into the Isolation Forest. Segmentation and anomaly detection run as parallel pipelines. Every customer profile receives distinct metadata:
-$$\text{Customer ID} \longrightarrow \big[\text{Cluster Assignment}\big] \ \otimes \ \big[\text{Is\_Anomaly}, \text{Anomaly\_Score}\big]$$
+To maintain schema purity, the K-Means cluster assignment is **not** fed into the Isolation Forest. Segmentation and anomaly detection run as parallel, independent pipelines. Every customer profile receives decoupled analytical metadata:
+
+```text
+Customer ID ──┬──► Cluster Assignment               (K-Means Pipeline)
+            └──► [Is_Anomaly, Anomaly_Score]     (Isolation Forest Pipeline)
 
 ---
 
@@ -182,3 +185,7 @@ E-Commerce-Customer-Intelligence/
 Contributions are always welcome! If you'd like to improve this project, feel free to fork the repository, make your changes, and submit a pull request.
 
 ---
+
+## 📄 License
+
+This project is open-source and released under the [MIT License](LICENSE)
