@@ -154,9 +154,12 @@ E-Commerce-Customer-Intelligence/
 │   ├── 05_cluster_profiling.ipynb
 │   └── 06_anomaly_detection.ipynb
 ├── models/
-│   ├── preprocessor_robust.joblib
-│   ├── clustering_model.joblib
-│   └── anomaly_inference_pipeline.joblib
+│   ├── anomaly_inference_pipeline.joblib   # End-to-end Isolation Forest pipeline
+│   ├── clustering_inference_pipeline.joblib# End-to-end K-Means segmentation pipeline
+│   ├── clustering_model.joblib             # Serialized K-Means clustering model
+│   ├── pca.joblib                          # Serialized PCA transformer
+│   ├── preprocessor_robust.joblib          # RobustScaler feature pipeline
+│   └── preprocessor_standard.joblib        # StandardScaler feature pipeline
 ├── assets/                     # Screenshots and visual media
 ├── requirements.txt            # Dependency tracking
 ├── LICENSE                     # MIT License
