@@ -1,0 +1,207 @@
+/* Target the main Streamlit layout container */
+.block-container {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+}
+
+.custom-footer {
+    text-align: center;
+    color: #808080;
+    font-size: 0.9rem;
+}
+
+.custom-footer a {
+    text-decoration: none !important
+}
+
+.custom-footer a:hover {
+    text-decoration: underline !important;
+}
+
+.app-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-header-title {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2.5rem; 
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #248eff !important;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.github-link:hover {
+    opacity: 0.7;
+}
+
+.github-link svg {
+    fill: currentColor;
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Cluster Profile Persona Card */
+.cluster-profile-card {
+    margin-top: 1rem;
+    padding: 1rem 1.1rem;
+    background-color: #F8FAFC;
+    border-left: 4px solid #2563EB;
+    border-radius: 6px;
+    border-top: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.cluster-profile-title {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cluster-profile-text {
+    font-size: 0.85rem;
+    color: #475569;
+    line-height: 1.5;
+    display: block;
+}
+
+/* Sidebar Background & Dark Palette */
+[data-testid="stSidebar"] {
+    background-color: #0F172A !important;
+    border-right: 1px solid #1E293B !important;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.25rem 0 1rem 0;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-logo {
+    font-size: 1.8rem;
+    color: #3B82F6;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.sidebar-title-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #F8FAFC;
+    line-height: 1.1;
+}
+
+.sidebar-subtitle {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #94A3B8;
+}
+
+/* Navigation Section Label */
+.sidebar-section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #64748B;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadio"] > div {
+    gap: 0.35rem;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadio"] label div[role="radio"],
+[data-testid="stSidebar"] [data-testid="stRadio"] label input {
+    display: none !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadio"] label {
+    padding: 0.6rem 0.85rem !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    font-size: 0.9rem !important;
+    color: #94A3B8 !important;
+    transition: all 0.2s ease-in-out !important;
+    cursor: pointer !important;
+    border: 1px solid transparent !important;
+    margin: 0 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadio"] label:hover {
+    background-color: #1E293B !important;
+    color: #F8FAFC !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadio"] label[aria-checked="true"] {
+    background-color: #1E293B !important;
+    color: #3B82F6 !important;
+    font-weight: 600 !important;
+    border: 1px solid #334155 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+}
+
+.sidebar-info-card {
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.info-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #F8FAFC;
+    margin-bottom: 0.4rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #22C55E;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+}
+
+.info-card-text {
+    font-size: 0.75rem;
+    color: #94A3B8;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.info-card-text b {
+    color: #CBD5E1;
+}
