@@ -31,7 +31,7 @@ CLUSTER_PROFILES = {
     }
 }
 
-def render_header(title: str, repo_url: str = "https://github.com/MazenSr/Customer-Intelligence-Engine"):
+def render_header(title: str, repo_url: str = "https://github.com/MazenSr/E-Commerce-Customer-Intelligence"):
     """Renders a simple page header exactly like st.title() with a clean GitHub link."""
     st.markdown(
         f'<div class="app-header-container">'
